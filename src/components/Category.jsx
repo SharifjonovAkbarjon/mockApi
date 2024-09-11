@@ -41,14 +41,14 @@ const Category = () => {
     <div className='container flex  gap-3'>
       <form className='flex flex-col gap-3 mt-10' onSubmit={handleCreateCategory} action="">
         <input required type="text" name='fname' placeholder='fname' />
-        <input type="text" name='lname' placeholder='lname' />
-        <input type="text" name='job' placeholder='job' />
+        <input required type="text" name='lname' placeholder='lname' />
+        <input required type="text" name='job' placeholder='job' />
         <input required type="text" name='gender' placeholder='gender' />
-        <input type="text" name='bio' placeholder='bio' />
+        <input required type="text" name='bio' placeholder='bio' />
         <button className='bg-[green]'>{createLoading ? "Loading... " : "Create"}</button>
       </form>
 
-      {
+      { 
         updateCategoryItem &&
         <div className='bg-[#00001148]  fixed h-[100%] py-4 px-[100px] w-[100%]'>
           <div className=' w-[400px] top-0  left-0'>
@@ -72,9 +72,9 @@ const Category = () => {
         {
           data?.map((category) => (
             <div className='gap-4' key={category.id}>
-              <div className='shadow-2xl w-[250px]  rounded-[20px] py-[20px] px-[20px] text-center flex flex-col gap-1'>
+              <div className='shadow-2xl w-[250px]   rounded-[20px] py-[20px] px-[20px] text-center flex flex-col gap-1'>
                 {/* <img className='' src={category.fname === "Jonny" ? jonny :  && category.gender === "male"? conor : selena} alt="" /> */}
-                <img className='h-[130px] object-contain' src={category.fname === "Boburmirzo" ? bobur : category.gender === "male" ? conor : selena} alt="" />
+                <img className='h-[130px] object-contain ' src={category.fname === "Boburmirzo" ? bobur : category.fname === "Laylo" ? nancy  : category.gender === "male" ? conor : selena} alt="" />
                 <h5 className=''>{category.fname}</h5>
                 <h5>{category.lname}</h5>
                 <h5>{category.job}</h5>
